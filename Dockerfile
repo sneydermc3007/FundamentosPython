@@ -1,18 +1,11 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    curl
+RUN apt-get update && apt-get install -y python3-pip
 
-RUN pip3 install jupyter
+RUN rm -rf /app && mkdir /app
 
-WORKDIR /app
+COPY ./entregables /app/entregables
 
-COPY . .
+WORKDIR /app/entregables
 
-ENV JUPYTER_ENABLE_LAB yes
-
-EXPOSE 8888
-
-CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+CMD ["python3", "exercise1.py"]
