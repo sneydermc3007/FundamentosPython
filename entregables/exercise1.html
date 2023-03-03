@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>py2flowchart</title>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/flowchart/1.14.0/flowchart.min.js"></script>
+    </head>
+    <body>
+        <div id="canvas"></div>
+        <pre id="code"></pre>
+        <script>
+            $("#code").html(code);
+            code= `
+start=>start: start
+operation1=>operation: from py2flowchart import pyfile2flowchart
+inputoutput2=>inputoutput: name = input("Ingrese su nombre: ")
+inputoutput3=>inputoutput: print(f"====== Vamos a determinar su tiempo de vacaciones {name} ======")
+inputoutput4=>inputoutput: departamento = input("Ingrese el departamento al que pertenece: ")
+inputoutput5=>inputoutput: anios = int(input("Ingrese la cantidad de años que lleva en la empresa: "))
+condition6=>condition: if departamento == "Clave 1" or departamento == "clave 1"
+condition7=>condition: if anios == 1
+operation8=>operation: vacaciones = 6
+condition9=>condition: if anios >= 2 and anios <= 6
+operation10=>operation: vacaciones = 14
+condition11=>condition: if anios >= 7
+operation12=>operation: vacaciones = 20
+inputoutput13=>inputoutput: print("No tiene derecho a vacaciones aun.")
+operation14=>operation: vacaciones = 0
+condition15=>condition: if departamento == "Clave 2" or departamento == "clave 2"
+condition16=>condition: if anios == 1
+operation17=>operation: vacaciones = 7
+condition18=>condition: if anios >= 2 and anios <= 6
+operation19=>operation: vacaciones = 15
+condition20=>condition: if anios >= 7
+operation21=>operation: vacaciones = 22
+inputoutput22=>inputoutput: print("No tiene derecho a vacaciones aun.")
+operation23=>operation: vacaciones = 0
+condition24=>condition: if departamento == "Clave 3" or departamento == "clave 3"
+condition25=>condition: if anios == 1
+operation26=>operation: vacaciones = 10
+condition27=>condition: if anios >= 2 and anios <= 6
+operation28=>operation: vacaciones = 20
+condition29=>condition: if anios >= 7
+operation30=>operation: vacaciones = 30
+inputoutput31=>inputoutput: print("No tiene derecho a vacaciones aun.")
+operation32=>operation: vacaciones = 0
+inputoutput33=>inputoutput: print("No hay ningun departamento con esa clave.")
+inputoutput34=>inputoutput: print(f"\n\nHola {name}, según el formulario usted pertenece al departamento con {departamento} y lleva {anios} años en la empresa.")
+condition35=>condition: if vacaciones != 0
+inputoutput36=>inputoutput: print(f"\tPor lo tanto, usted tiene derecho a {vacaciones} días de vacaciones.");
+operation37=>operation: pass
+inputoutput38=>inputoutput: print("Gracias por su tiempo.")
+condition39=>condition: if __name__ == "__main__"
+operation40=>operation: main()
+operation41=>operation: pyfile2flowchart("./entregables/exercise1.py", "./entregables/exercise1.html")
+operation42=>operation: pass
+end=>end: end
+start->operation1
+operation1->inputoutput2
+inputoutput2->inputoutput3
+inputoutput3->inputoutput4
+inputoutput4->inputoutput5
+inputoutput5->condition6
+condition6(yes)->condition7
+condition7(yes)->operation8
+condition7(no)->condition9
+condition9(yes)->operation10
+condition9(no)->condition11
+condition11(yes)->operation12
+condition11(no)->inputoutput13
+inputoutput13->operation14
+condition6(no)->condition15
+condition15(yes)->condition16
+condition16(yes)->operation17
+condition16(no)->condition18
+condition18(yes)->operation19
+condition18(no)->condition20
+condition20(yes)->operation21
+condition20(no)->inputoutput22
+inputoutput22->operation23
+condition15(no)->condition24
+condition24(yes)->condition25
+condition25(yes)->operation26
+condition25(no)->condition27
+condition27(yes)->operation28
+condition27(no)->condition29
+condition29(yes)->operation30
+condition29(no)->inputoutput31
+inputoutput31->operation32
+condition24(no)->inputoutput33
+operation8->inputoutput34
+operation10->inputoutput34
+operation12->inputoutput34
+operation14->inputoutput34
+operation17->inputoutput34
+operation19->inputoutput34
+operation21->inputoutput34
+operation23->inputoutput34
+operation26->inputoutput34
+operation28->inputoutput34
+operation30->inputoutput34
+operation32->inputoutput34
+inputoutput33->inputoutput34
+inputoutput34->condition35
+condition35(yes)->inputoutput36
+condition35(no)->operation37
+inputoutput36->inputoutput38
+operation37->inputoutput38
+inputoutput38->condition39
+condition39(yes)->operation40
+operation40->operation41
+condition39(no)->operation42
+operation41->end
+operation42->end
+
+`;
+            chart = flowchart.parse(code);
+            chart.drawSVG('canvas', {"line-width": 1, "arrow-end": "open"});
+        </script>
+    </body>
+</html>

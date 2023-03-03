@@ -8,4 +8,5 @@ COPY ./entregables /app/entregables
 
 WORKDIR /app/entregables
 
-CMD ["python3", "exercise1.py"]
+CMD ["python3", "exercise1.py", "exercise2.py"]
+
