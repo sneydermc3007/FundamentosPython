@@ -15,6 +15,6 @@ else:
     if n2 > n3:
         print(f"\nEl numero mayor entre los ingresados fue el: {n2}")
     else:
-        print(f"\nEl numero mayor entre los ingresados fue el: {n1}")
+        print(f"\nEl numero mayor entre los ingresados fue el: {n3}")
 
 print("\tFin.")
