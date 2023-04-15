@@ -4,7 +4,8 @@ chart = input("Ingrese un caracter: ")
 
 print(f"\nEsta es la frase ingresada: {frase} y este el caracter {chart}")
 
-vocales = ['a', 'e', 'i', 'o', 'u']
+# vocales = ['a', 'e', 'i', 'o', 'u']
+vocales = 'aeiouAEIOU'
 
 array = list(frase)
 
